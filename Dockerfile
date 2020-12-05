@@ -26,7 +26,7 @@ RUN apt-get update \
         liblzma-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ENV PYTHON_VERSION=3.8.5 \
+ENV PYTHON_VERSION=3.8.6 \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBTYECODE=1 \
     PYENV_ROOT="/.pyenv" \
@@ -41,6 +41,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install poetry && \
     poetry install --no-dev
 
-COPY python-template ./python-template
+COPY python_tools ./python_tools
 
 ENTRYPOINT ["/bin/bash"]
