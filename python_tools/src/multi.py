@@ -13,12 +13,9 @@ def multiplex(function, data, multi_type: MultiType):
     num_cpus = os.cpu_count()
 
     with multi_type.value(processes=num_cpus) as multiplex_pool:
-        return filter(
-            None,
-            multiplex_pool.map(function, data)
-        )
+        return filter(None, multiplex_pool.map(function, data))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     x = MultiType.processing
     print(x.value)
